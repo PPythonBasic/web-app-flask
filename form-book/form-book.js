@@ -9,12 +9,23 @@ const subMit = () => {
     year = parseInt(year);
     const publisher = document.querySelector('input[name="publisher"]').value;
     const result = document.querySelector("#result");
-
-    console.log(`Name Author ${nameAuthor}`);
-    console.log(`Name Book ${nameBook}`);
-    console.log(`price ${price}`);
-    console.log(`year ${year}`);
-    console.log(`publisher ${publisher}`);
+    let listBooks = [];
+    listBooks.push(`
+        <article class="card">
+            <header>
+                <h3>Name Book : ${nameBook}</h3>
+            </header>
+            <footer>
+                <p>Name Author: ${nameAuthor}</p>
+                <p>Price: ${price}</p>
+                <p>Year: ${year}</p>
+                <p>Publisher : ${publisher}</p>
+            </footer>
+        </article>
+    `);
+    for (let i = 0; i < listBooks.length; i++) {
+        result.innerHTML += `${listBooks[i]} <br>`;
+    }
 }
 
 
